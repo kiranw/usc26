@@ -1,0 +1,343 @@
+body {
+    background-color: #fefefe;
+    font-family: "Larsseit";
+    font-size: 2em;
+    background-color: #CDD6D5;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+.navbar {
+    padding-top:10px;
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0));
+    height: 100px;
+    border: 0px;
+    position: fixed;
+    display: block;
+    z-index: 3;
+}
+
+.navbar-brand {
+    margin-top: 10px;
+    font-size: 1.7em;
+    font-weight: 700;
+    color: #140A25 !important;
+}
+
+.navbar-link {
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-family: "Apercu-Bold";
+    font-weight: 800;
+    font-size: 0.7em;
+    background-color: rgba(1,1,1,0);
+    padding: 6px 10px 6px 10px;
+    color: #140A25 !important;
+    border-radius: 0px;
+    border: 3px solid #140A25;
+    text-decoration: underline;
+}
+
+#main-content {
+    height: 100%;
+    width: 100%;
+    padding-top: 125px;
+    display: block;
+    overflow-y: hidden !important;
+    padding-left: 30px;
+    margin-left: -15px;
+}
+
+#breadcrumbs {
+    height: 5%;
+    display: block;
+    margin-top: -30px;
+}
+
+#time-explorer {
+    background-color: white;
+    position: fixed;
+    bottom: 40px;
+    margin-left: -4%;
+    height: 200px;
+    width: 100vw;
+}
+
+#time-explorer-d3-container, .d3-general {
+    font-family: "Apercu-Mono"
+}
+
+.time-explorer-line {
+    fill: steelblue;
+    stroke: steelblue;
+    stroke-width: 2px;
+}
+
+.time-explorer-dot {
+    fill: #415B76;
+    opacity: 1;
+}
+
+.time-explorer-dot:hover {
+    fill: #415B76;
+    opacity: 0.4;
+}
+
+#main-vis {
+    padding-top: 15px;
+    overflow-y: hidden;
+}
+
+#sidebar {
+
+}
+
+.collapsed {
+    /* hide it for small displays*/
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .collapsed {
+        display: block;
+        margin-left: -17%;
+    }
+}
+
+#main-vis-container {
+    /* necessary to hide collapsed sidebar */
+    overflow-x: hidden;
+    /* for the animation */
+    transition: width 0.3s ease;
+    overflow-y: hidden;
+}
+
+#main-vis-hierarchy{
+    /* for the animation */
+    transition: margin 0.3s ease;
+    background-color: rgba(123,155,156,0.5);
+    color: white;
+    padding: 30px;
+    border-radius: 30px;
+    overflow-y: scroll;
+}
+
+#main-vis-diffs {
+    font-family: "CMU Serif";
+    padding: 30px;
+    overflow-y: scroll;
+    background-color: white;
+    border-radius: 30px;
+    font-size: 0.8em;
+}
+
+#main-vis-graphs {
+    border-radius: 30px;
+    background-color: rgba(123,155,156,0.1);
+    color: white;
+    padding: 30px;
+    transition: margin 0.3s ease;
+}
+
+#time-explorer {
+    height: 100px;
+    bottom: 60px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.8);
+    color: black;
+    /*padding: 20px;*/
+    left: 4%;
+    font-family: "Apercu-Mono";
+    font-size: 1em;
+}
+
+#time-explorer-d3-container {
+    height: 100px;
+    width: 100%;
+}
+
+.time-explorer-selected-dot {
+    fill: #FF7F50;
+}
+
+#footer {
+    height: 60px;
+    width: 100% !important;
+    margin-left: 0px;
+    background-color: #140A25;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.5em;
+}
+
+
+.btn-toggle {
+    margin-top: 10px;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-family: "Apercu-Bold";
+    font-weight: 800;
+    font-size: 0.7em;
+    background-color: #140A25;
+    padding: 4px 8px;
+    color: white !important;
+    border-radius: 5px;
+    border: 3px solid #140A25;
+    cursor: pointer;
+}
+
+.hiddenMetadata {
+    visibility: hidden;
+}
+
+
+.chapter {
+    color: white;
+    margin-top: 5px;
+}
+
+.chapter:hover {
+    color: white;
+    text-decoration: underline;
+    font-weight: 800;
+    padding: 5px 10px;
+    background-color: rgba(20, 10, 37, 0.7);
+    cursor: pointer;
+}
+
+.chapter-selected {
+    color: white;
+    text-decoration: underline;
+    font-weight: 800;
+    padding: 5px 10px;
+    background-color: rgba(20, 10, 37, 1);
+}
+
+#loading-gif {
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 35%;
+    width: 30%;
+}
+
+.diff-green {
+    background-color: #e2ffea;
+    cursor: pointer;
+}
+
+.diff-red {
+    background-color: #ffd7db;
+    cursor: pointer;
+}
+
+
+/*CHAPTER 1 STUFF*/
+#chapter1-circle {
+    height: 20px;
+    width: 20px;
+    margin: 0 auto;
+    margin-top: 300px;
+    text-align: center;
+    background-color: #cb4b16;
+    border-radius: 100px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#chapter1-circle:hover{
+    opacity: 1;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin-top: 297px;
+    border: 3px solid white;
+}
+
+#chapter-1-visualization-container {
+    position: fixed;
+    width: 60%;
+    height: 70%;
+    top: 10%;
+    left: 20%;
+    background-color: white;
+    border-radius: 30px;
+    z-index: 10;
+    -webkit-box-shadow: 18px 15px 66px -26px rgba(0,0,0,0.75);
+    -moz-box-shadow: 18px 15px 66px -26px rgba(0,0,0,0.75);
+    box-shadow: 18px 15px 66px -26px rgba(0,0,0,0.75);
+    padding: 30px;
+    padding-top:5px;
+}
+
+#chapter1-visualization{
+    width: 80%;
+    height: 70%;
+    margin-bottom: 5%;
+    left: 10%;
+    position: absolute;
+    display: block;
+}
+#chapter1-difftext{
+    width: 80%;
+    background-color: #fefefe;
+    left: 10%;
+    bottom: 5%;
+    height: 20%;
+    position: absolute;
+    display: block;
+    /*position:relative;*/
+}
+
+#graph-visualization-close {
+    font-size: 2em;
+    color: slategray;
+    opacity: 0.8;
+    width: 100%;
+    text-align: right;
+    font-weight: 100;
+    margin-bottom: -20px;
+}
+
+#graph-visualization-close:hover {
+    color: darkslategray;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.dark-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background-color: black;
+    opacity: 0.6;
+}
+
+
+.line {
+    stroke-width: 4;
+    fill: none;
+}
+
+.axis path {
+    stroke: black;
+}
+
+.text {
+    font-size: 12px;
+}
+
+.title-text {
+    font-size: 12px;
+}
